@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		272A3D101EC7659F0007E550 /* AddressInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A3D0F1EC7659F0007E550 /* AddressInfo.swift */; };
+		272A3D121EC7790A0007E550 /* CallableRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272A3D111EC7790A0007E550 /* CallableRecognizer.swift */; };
 		27A514291EBCAD4200C41A72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A514281EBCAD4200C41A72 /* AppDelegate.swift */; };
 		27A5142B1EBCAD4200C41A72 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5142A1EBCAD4200C41A72 /* ViewController.swift */; };
 		27A5142E1EBCAD4200C41A72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A5142C1EBCAD4200C41A72 /* Main.storyboard */; };
@@ -15,6 +17,11 @@
 		27A514361EBCAD4200C41A72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27A514341EBCAD4200C41A72 /* LaunchScreen.storyboard */; };
 		27A514411EBCAD4200C41A72 /* InvocationStackSamplingAgentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A514401EBCAD4200C41A72 /* InvocationStackSamplingAgentTests.swift */; };
 		27A5144C1EBCAD4200C41A72 /* InvocationStackSamplingAgentUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5144B1EBCAD4200C41A72 /* InvocationStackSamplingAgentUITests.swift */; };
+		27A5145B1EBCADFB00C41A72 /* StackSymbolMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5145A1EBCADFB00C41A72 /* StackSymbolMapper.swift */; };
+		27A5145D1EBCBFF800C41A72 /* Callable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5145C1EBCBFF800C41A72 /* Callable.swift */; };
+		27A5145F1EC0971300C41A72 /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A5145E1EC0971300C41A72 /* Agent.swift */; };
+		27A514611EC0AB2900C41A72 /* DataDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A514601EC0AB2900C41A72 /* DataDispatch.swift */; };
+		27A514631EC0BE9F00C41A72 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A514621EC0BE9F00C41A72 /* Util.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		272A3D0F1EC7659F0007E550 /* AddressInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressInfo.swift; sourceTree = "<group>"; };
+		272A3D111EC7790A0007E550 /* CallableRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallableRecognizer.swift; sourceTree = "<group>"; };
 		27A514251EBCAD4200C41A72 /* InvocationStackSamplingAgent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvocationStackSamplingAgent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A514281EBCAD4200C41A72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27A5142A1EBCAD4200C41A72 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +58,11 @@
 		27A514471EBCAD4200C41A72 /* InvocationStackSamplingAgentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvocationStackSamplingAgentUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A5144B1EBCAD4200C41A72 /* InvocationStackSamplingAgentUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvocationStackSamplingAgentUITests.swift; sourceTree = "<group>"; };
 		27A5144D1EBCAD4200C41A72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27A5145A1EBCADFB00C41A72 /* StackSymbolMapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackSymbolMapper.swift; sourceTree = "<group>"; };
+		27A5145C1EBCBFF800C41A72 /* Callable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callable.swift; sourceTree = "<group>"; };
+		27A5145E1EC0971300C41A72 /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
+		27A514601EC0AB2900C41A72 /* DataDispatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDispatch.swift; sourceTree = "<group>"; };
+		27A514621EC0BE9F00C41A72 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +113,7 @@
 		27A514271EBCAD4200C41A72 /* InvocationStackSamplingAgent */ = {
 			isa = PBXGroup;
 			children = (
+				27A514591EBCADDA00C41A72 /* Agent */,
 				27A514281EBCAD4200C41A72 /* AppDelegate.swift */,
 				27A5142A1EBCAD4200C41A72 /* ViewController.swift */,
 				27A5142C1EBCAD4200C41A72 /* Main.storyboard */,
@@ -126,6 +141,20 @@
 				27A5144D1EBCAD4200C41A72 /* Info.plist */,
 			);
 			path = InvocationStackSamplingAgentUITests;
+			sourceTree = "<group>";
+		};
+		27A514591EBCADDA00C41A72 /* Agent */ = {
+			isa = PBXGroup;
+			children = (
+				27A5145A1EBCADFB00C41A72 /* StackSymbolMapper.swift */,
+				27A5145C1EBCBFF800C41A72 /* Callable.swift */,
+				27A5145E1EC0971300C41A72 /* Agent.swift */,
+				27A514601EC0AB2900C41A72 /* DataDispatch.swift */,
+				27A514621EC0BE9F00C41A72 /* Util.swift */,
+				272A3D0F1EC7659F0007E550 /* AddressInfo.swift */,
+				272A3D111EC7790A0007E550 /* CallableRecognizer.swift */,
+			);
+			name = Agent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,8 +295,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				27A5142B1EBCAD4200C41A72 /* ViewController.swift in Sources */,
+				272A3D121EC7790A0007E550 /* CallableRecognizer.swift in Sources */,
 				27A514311EBCAD4200C41A72 /* InvocationStackSamplingAgent.xcdatamodeld in Sources */,
+				27A5145D1EBCBFF800C41A72 /* Callable.swift in Sources */,
+				27A514631EC0BE9F00C41A72 /* Util.swift in Sources */,
+				27A5145F1EC0971300C41A72 /* Agent.swift in Sources */,
 				27A514291EBCAD4200C41A72 /* AppDelegate.swift in Sources */,
+				27A514611EC0AB2900C41A72 /* DataDispatch.swift in Sources */,
+				272A3D101EC7659F0007E550 /* AddressInfo.swift in Sources */,
+				27A5145B1EBCADFB00C41A72 /* StackSymbolMapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +552,7 @@
 				27A514521EBCAD4200C41A72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27A514531EBCAD4200C41A72 /* Build configuration list for PBXNativeTarget "InvocationStackSamplingAgentTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +561,7 @@
 				27A514551EBCAD4200C41A72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		27A514561EBCAD4200C41A72 /* Build configuration list for PBXNativeTarget "InvocationStackSamplingAgentUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +570,7 @@
 				27A514581EBCAD4200C41A72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
