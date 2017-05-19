@@ -6,11 +6,11 @@
 //  Copyright © 2017 Matteo Sassano. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class StackSymbolMapper: NSObject {
     
-    var callableMap : [UInt64 : Callable]?
+    // var callableMap : [UInt64 : Callable]?
     
     //var probableChildId : UInt64?
     
@@ -19,7 +19,35 @@ class StackSymbolMapper: NSObject {
     }
     
     func getStackReturnAddresses() -> [UInt] {
+        // return callStackReturnAddresses()
         return Thread.callStackReturnAddresses as [UInt]
+    }
+    
+    public func callStackReturnAddresses(skip: UInt = 0, maximumAddresses: Int = Int.max) -> [UInt] {
+        guard maximumAddresses > 0 else { return [] }
+        
+        var result = [UInt]()
+        var skipsRemaining = skip
+        var addressesRemaining = maximumAddresses
+        
+        let maximumReserve = 32
+        result.reserveCapacity(maximumAddresses < maximumReserve ? maximumAddresses : maximumReserve)
+        
+        var (frame, bounds) = StackFrame.current()
+        var returnAddress = frame.returnAddress
+        
+        while returnAddress != 0 && addressesRemaining > 0 {
+            if skipsRemaining > 0 {
+                skipsRemaining -= 1
+            } else {
+                result.append(returnAddress)
+                addressesRemaining -= 1
+            }
+            frame = frame.next(inBounds: bounds)
+            returnAddress = frame.returnAddress
+        }
+        
+        return result
     }
     
     func getActualCallableStack() -> [Callable]? {

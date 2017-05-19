@@ -6,7 +6,7 @@
 //  Copyright © 2017 Matteo Sassano. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class DataDispatch: NSObject {
 

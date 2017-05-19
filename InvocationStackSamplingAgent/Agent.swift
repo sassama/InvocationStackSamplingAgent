@@ -6,44 +6,57 @@
 //  Copyright © 2017 Matteo Sassano. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import Darwin
 
 class Agent: NSObject {
-    
-    /// Holds Agent singleton
-    static var agent: Agent!
     
     /// Strores the Agent properties
     var agentProperties: [String: Any]?
     
-    private override init() {
-        agentProperties = [String: Any]()
-    }
+    let stackSampler: CallStackSampler
     
-    static func configureAgent(properties: [(String, Any)]? = nil) -> Agent {
-        let agent = Agent.getInstance()
+    static var mainThreadID: pthread_t?
+    
+    init(properties: [(String, Any)]? = nil) {
+        Agent.mainThreadID = pthread_self()
+        agentProperties = [String: Any]()
         if let properties = properties {
             for (property, value) in properties {
-                if agent.allowedProperty(property: property) {
-                    agent.agentProperties?["property"] = value
+                if Agent.allowedProperty(property: property) {
+                    agentProperties?["property"] = value
                 }
             }
         }
-        return agent
+        stackSampler = CallStackSampler()
     }
     
-    /// Returns the hold Agent instance or a new one if one is not existing
-    /// - returns: Agent instance
-    static func getInstance() -> Agent {
-        if agent != nil {
-            return agent
-        } else {
-            return Agent()
+    func setAgentConfiguration(properties: [(String, Any)]? = nil) {
+        if let properties = properties {
+            for (property, value) in properties {
+                if Agent.allowedProperty(property: property) {
+                    agentProperties?["property"] = value
+                }
+            }
         }
     }
     
+    func startAgent() {
+        stackSampler.timer.invalidate()
+        stackSampler.initializeTimer()
+    }
+    
+    func startAndReturnAgent() -> Agent {
+        startAgent()
+        return self
+    }
+    
+    func stopAgent() {
+        //stackSampler.timer.invalidate()
+    }
+    
     /// TODO:
-    func allowedProperty(property: String) -> Bool {
+    static func allowedProperty(property: String) -> Bool {
         return true
     }
 

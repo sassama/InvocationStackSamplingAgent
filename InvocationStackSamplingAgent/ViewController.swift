@@ -9,32 +9,46 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var agent : Agent!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dosomething2("bla")
+        agent = Agent()
+        DispatchQueue.main.async {
+            self.agent.startAgent()
+        }
+        DispatchQueue.main.async {
+            self.dosomething()
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-        
-    func dosomething2(_ message: String) {
-        print("dosomething2")
-        
-        let stackMapper = StackSymbolMapper()
-        let stack : [UInt] = stackMapper.getStackReturnAddresses()
-        for s in stack {
-            _ = AddressInfo(address: UInt(s))
-            //print(aInfo.symbol)
-        }
-        
-        if let callables = stackMapper.getActualCallableStack() {
-            for c in callables {
-                print(c)
+    
+    func dosomething() {
+        // let i : UInt64 = 0
+        var j : UInt64 = 0
+        //while i < UInt64.max/64 {
+            while j < 100 {
+                print("\(j): dosomething")
+                dosomething2()
+                j = j + 1
             }
+        //}
+    }
+    
+    func dosomething2() {
+        // let i : UInt64 = 0
+        var j : UInt64 = 0
+        //while i < UInt64.max/64 {
+        while j < 100 {
+            print("\(j): dosomething2")
+            j = j + 1
         }
+        //}
     }
 
 

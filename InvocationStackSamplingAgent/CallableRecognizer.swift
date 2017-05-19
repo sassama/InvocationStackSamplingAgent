@@ -6,7 +6,7 @@
 //  Copyright © 2017 Matteo Sassano. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class CallableRecognizer: NSObject {
     
@@ -54,10 +54,12 @@ class CallableRecognizer: NSObject {
         }
         oldCallableBuffer[index].ended = true
         closedCallables.append(oldCallableBuffer[index])
+        print(oldCallableBuffer[index])
     }
     
     func recognizeEqualCallable() {
         if oldCallableBuffer.count == 0 {
+            overrideOldBuffer()
             return
         }
         var lastEqualCallable : Int?
@@ -79,6 +81,7 @@ class CallableRecognizer: NSObject {
                 closeCallable(index: index)
             }
         }
+        overrideOldBuffer()
     }
 
 }
